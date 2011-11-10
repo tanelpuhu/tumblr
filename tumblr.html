@@ -27,7 +27,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
     <meta name="text:Google Plus ID" content=""/>
     <meta name="text:Google Site Verification" content=""/>
     {block:IfGoogleSiteVerification}<meta name="google-site-verification" content="{text:Google Site Verification}" />{/block:IfGoogleSiteVerification}
-    <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+    <title>{block:TagPage}{Tag} - {/block:TagPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
     <link rel="shortcut icon" href="{Favicon}" />
     {block:IfGooglePlusID}<link rel="publisher" href="https://plus.google.com/{text:Google Plus ID}/" />{/block:IfGooglePlusID}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
