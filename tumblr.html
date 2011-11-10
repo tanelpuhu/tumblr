@@ -53,7 +53,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
             -moz-opacity: 0.1;
             opacity: 0.1;
         }
-        
+
         #content .meta a:hover img {
             -moz-opacity: 0.15;
             opacity: 0.15;
@@ -154,7 +154,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Text}
-        
         {block:Photo}
         <li class="photo">
           <p class="noborder">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}</p>
@@ -174,7 +173,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Photo}
-          
         {block:Photoset}
         <li class="photoset">
           <p class="noborder">{Photoset-500}</p>
@@ -194,7 +192,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Photoset}
-          
         {block:Quote}
         <li class="quote">
           <blockquote>{Quote}</blockquote>
@@ -214,7 +211,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Quote}
-        
         {block:Link}
         <li class="link">
           <h3><a href="{URL}" class="link" {Target}>{Name} &rarr;</a></h3>
@@ -234,7 +230,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Link}
-          
         {block:Video}
           <li class="video">
             {Video-500}
@@ -254,7 +249,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
             </p>
           </li>
         {/block:Video}
-        
         {block:Chat}
         <li class="chat">
           {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
@@ -274,7 +268,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Chat}
-
         {block:Audio}
         <li class="audio">
           {AudioPlayerBlack}
@@ -294,29 +287,24 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           </p>
         </li>
         {/block:Audio}
-          
         {block:PostNotes}
         <li id="notes">
           {PostNotes}
         </li>
         {/block:PostNotes}
-
       {/block:Posts}
-      
       </ol>
       <div id="pagination">
         {block:NextPage}<a class="button next" id="next_page" href="{NextPage}">&larr; {lang:Older}</a>{/block:NextPage}
         {block:PreviousPage}<a class="button right" href="{PreviousPage}">{lang:Newer} &rarr;</a>{/block:PreviousPage}
       </div>
     </div>
-
     <script type='text/javascript' src='http://www.google-analytics.com/ga.js'></script>
     <script type="text/javascript">
-    try{ 
+    try {
         var pageTracker = _gat._getTracker("UA-260300-11");
         pageTracker._trackPageview();
     } catch(err) {}
     </script>
-
   </body>
 </html>
