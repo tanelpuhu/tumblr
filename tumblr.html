@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+    <meta name="text:Twitter Username" content=""/>
+    <meta name="text:Flickr Username" content=""/>
+    <meta name="text:Disqus Shortname" content=""/>
+    <meta name="color:Asterisk" content="#17f0ff"/>
+    <meta name="google-site-verification" content="dOXeyye181P7v8CQAbPXcUBpqgr9N1cGq5LkPfvhZ7o" />
+    <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="publisher" href="https://plus.google.com/113038133242730776079/" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
+    <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/xz44nnc/qVpkyo84x/style.css"/>
+    <script type="text/javascript" src="http://static.tumblr.com/xz44nnc/o5lkyivqw/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="http://static.tumblr.com/xz44nnc/k24kyivst/poop.js"></script>
+    <style type="text/css">
+        ol#nav li.home a {
+            color: {color:Asterisk};
+        }
+        
+        #content .meta a img {
+            border: none;
+            background: none;
+            padding: 0;
+            margin: 0;
+            vertical-align: text-top;
+            -moz-opacity: 0.1;
+            opacity: 0.1;
+        }
+        
+        #content .meta a:hover img {
+            -moz-opacity: 0.15;
+            opacity: 0.15;
+        }
+        
+        {CustomCSS}
+    </style>
+</head>    
+<body>
+  <ol id="nav">
+    <li class="home"><a href="/" title="{Title}">*</a></li>
+    <li><a href="/">{lang:Home}</a></li>
+    <li><a href="https://plus.google.com/113038133242730776079/?prsrc=3">GOOGLE+</a></li>
+    {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
+    {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+    {block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
+    {block:IfFlickrUsername}<li><a href="http://flickr.com/photos/{text:Flickr Username}">Flickr</a></li>{/block:IfFlickrUsername}
+    {block:IfTwitterUsername}<li><a href="http://twitter.com/{text:Twitter Username}">@{text:Twitter Username}</a></li>{/block:IfTwitterUsername}
+    <li><a href="/archive">{lang:Archive}</a></li>
+    <li><a href="{RSS}">{lang:RSS}</a></li>
+    <li>&nbsp;</li>
+    <li>
+      <a href="http://www.google.com/talk/service/badge/Start?tk=z01q6amlqr4t2vmagmghck92kde16m076mfggb32bb76cjhe2e1j3phv85nka72sjk2n3ifhm604aslhurth5ekqafqib4k6dt0vl0pnvaic5h97ecthe281poaql66n2cpvfgt6fipvjqdo2jfqa3i6iktuuucdb1jd0mrc7" target="_blank" title="Click here to chat with Tanel">Chat</a>
+    </li>
+  </ol>
+
+  <div id="content">
+    <ol>
+    {block:Posts}
+      {block:Text}
+      <li class="regular">
+        {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+        {Body}
+        <p class="meta"><a href="{Permalink}">{TimeAgo}</a> &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>{block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}</p>
+      </li>
+      {/block:Text}
+      
+      {block:Photo}
+      <li class="photo">
+        <p class="noborder">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}</p>
+        {block:Caption}{Caption}{/block:Caption}
+        <p class="meta">
+          <a href="{Permalink}">{TimeAgo}</a>
+          &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+          {block:ContentSource}
+            &nbsp;/&nbsp;/{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+          {/block:ContentSource}
+        </p>
+      </li>
+      {/block:Photo}
+        
+      {block:Photoset}
+      <li class="photoset">
+        <p class="noborder">{Photoset-500}</p>
+        {block:Caption}{Caption}{/block:Caption}
+        <p class="meta">
+          <a href="{Permalink}">{TimeAgo}</a>
+          &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+          {block:ContentSource}
+            &nbsp;/&nbsp;/{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+          {/block:ContentSource}
+        </p>
+      </li>
+      {/block:Photoset}
+        
+      {block:Quote}
+      <li class="quote">
+        <blockquote>{Quote}</blockquote>
+        {block:Source}<cite>&ndash; {Source}</cite>{/block:Source}
+        <p class="meta">
+          <a href="{Permalink}">{TimeAgo}</a>
+          &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+          {block:ContentSource}
+            &nbsp;/&nbsp;/{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+          {/block:ContentSource}
+        </p>
+      </li>
+      {/block:Quote}
+      
+      {block:Link}
+      <li class="link">
+        <h3><a href="{URL}" class="link" {Target}>{Name} &rarr;</a></h3>
+        {block:Description}{Description}{/block:Description}
+        <p class="meta">
+          <a href="{Permalink}">{TimeAgo}</a>
+          &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+          {block:ContentSource}
+            &nbsp;/&nbsp;/{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+          {/block:ContentSource}
+        </p>
+      </li>
+      {/block:Link}
+        
+      {block:Video}
+        <li class="video">
+          {Video-500}
+          {block:Caption}{Caption}{/block:Caption}
+          <p class="meta">
+            <a href="{Permalink}">{TimeAgo}</a>
+            &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+            {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+            {block:ContentSource}
+              &nbsp;/&nbsp;/{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+            {/block:ContentSource}
+          </p>
+        </li>
+      {/block:Video}
+      
+      {block:Chat}
+      <li class="chat">
+        {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
+        {block:Lines}<p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>{/block:Lines}
+        <p class="meta">
+          <a href="{Permalink}">{TimeAgo}</a>
+          &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+          {block:ContentSource}
+            &nbsp;/&nbsp;/{lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+          {/block:ContentSource}
+        </p>
+      </li>
+      {/block:Chat}
+
+      {block:Audio}
+      <li class="audio">
+        {AudioPlayerBlack}
+        {block:Caption}{Caption}{/block:Caption}
+        <p class="meta">
+          <a href="{Permalink}">{TimeAgo}</a>
+          &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          {block:IfDisqusShortname} &nbsp;/&nbsp; <a class="dsq-comment-count" href="{Permalink}#disqus_thread">{lang:Comments}</a>{/block:IfDisqusShortname}
+          {block:ContentSource}
+            &nbsp;/&nbsp; {lang:Source}: <a href="{SourceURL}">{block:SourceLogo}<img src="{WhiteLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceTitle}{/block:NoSourceLogo}</a></p>
+          {/block:ContentSource}
+        </p>
+      </li>
+      {/block:Audio}
+        
+      {block:PostNotes}
+      <li id="notes">
+        {PostNotes}
+      </li>
+      {/block:PostNotes}
+    {/block:Posts}
+    
+    {block:IfDisqusShortname}<li><script type="text/javascript">var disqus_url = "{Permalink}"; var disqus_title ="{block:PostTitle}{PostTitle}{/block:PostTitle}";</script>{block:Permalink}<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/embed.js"></script><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript=jessakalani">comments powered by Disqus.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>{/block:Permalink}<script type="text/javascript">
+    //<![CDATA[
+    (function() {
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+            query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+        }
+        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/{text:Disqus Shortname}/get_num_replies.js' + query + '"></' + 'script>');
+    })();
+    //]]>
+    </script></li>
+    {/block:IfDisqusShortname}
+    </ol>
+    <div id="pagination">
+      {block:NextPage}<a class="button next" id="next_page" href="{NextPage}">&larr; {lang:Older}</a>{/block:NextPage}
+      {block:PreviousPage}<a class="button right" href="{PreviousPage}">{lang:Newer} &rarr;</a>{/block:PreviousPage}
+    </div>
+</div>
+
+<script type='text/javascript' src='http://www.google-analytics.com/ga.js'></script>
+<script type="text/javascript">
+try{ 
+    var pageTracker = _gat._getTracker("UA-260300-11");
+    pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
