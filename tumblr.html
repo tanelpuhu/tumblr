@@ -1,25 +1,49 @@
+<!--
+   _                   _             _                                  
+  | |                 | |           | |                                 
+  | |_ __ _ _ __   ___| |_ __  _   _| |__  _   _   ___ ___  _ __ ___    
+  | __/ _` | '_ \ / _ \ | '_ \| | | | '_ \| | | | / __/ _ \| '_ ` _ \   
+  | || (_| | | | |  __/ | |_) | |_| | | | | |_| || (_| (_) | | | | | |  
+   \__\__,_|_| |_|\___|_| .__/ \__,_|_| |_|\__,_(_)___\___/|_| |_| |_|  
+                        | |                                             
+                        |_|                                             
+                                                                        
+aqu5S0bAQ8ZVwCGNt0kgrN83Dkyiti7FagWb7MtCOFgE9vHRjfTN9zXwCDMX5SRzCEjn8uf5
+6dEu1Lkasak6LpC4g8N18qXjnTzU8GM7GDOYfZA6VNMSNBHBpha3JHfV0q1LK2fNCAN9c7s3
+Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
+                                                                        
+                                     https://github.com/tanelpuhu/tumblr
+                                                                        
+-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8"/>
     {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
     <meta name="text:Twitter Username" content=""/>
-    <meta name="text:Flickr Username" content=""/>
-    <meta name="text:Disqus Shortname" content=""/>
-    <meta name="color:Asterisk" content="#17f0ff"/>
-    <meta name="google-site-verification" content="dOXeyye181P7v8CQAbPXcUBpqgr9N1cGq5LkPfvhZ7o" />
+    <meta name="text:Facebook Username" content=""/>
+    <meta name="text:Linkedin Username" content=""/>
+    <meta name="text:Lastfm Username" content=""/>
+    <meta name="text:Google Plus ID" content=""/>
+    <meta name="text:Google Site Verification" content=""/>
+    {block:IfGoogleSiteVerification}<meta name="google-site-verification" content="{text:Google Site Verification}" />{/block:IfGoogleSiteVerification}
     <title>{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
     <link rel="shortcut icon" href="{Favicon}" />
-    <link rel="publisher" href="https://plus.google.com/113038133242730776079/" />
+    {block:IfGooglePlusID}<link rel="publisher" href="https://plus.google.com/{text:Google Plus ID}/" />{/block:IfGooglePlusID}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
     <link rel="stylesheet" type="text/css" href="//static.tumblr.com/xz44nnc/qVpkyo84x/style.css"/>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
     <script type="text/javascript" src="//static.tumblr.com/xz44nnc/k24kyivst/poop.js"></script>
     <style type="text/css">
-        ol#nav li.home a {
-            color: {color:Asterisk};
+        @import url(http://fonts.googleapis.com/css?family=Cabin);
+        body {
+          font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;;
         }
-        
+
+        #content {
+          top: 40px !important;
+        }
+
         #content .meta a img {
             border: none;
             background: none;
@@ -35,19 +59,75 @@
             opacity: 0.15;
         }
         
+        #ck {
+          display:none;
+        }
+
+        ::-moz-selection{
+          background: #d91e76;
+          color:#fff;
+          text-shadow: none;
+        }
+
+        ::selection {
+          background:#d91e76;
+          color:#fff;
+          text-shadow: none;
+        }
+
         {CustomCSS}
     </style>
   </head>
   <body>
     <ol id="nav">
-      <li class="home"><a href="/" title="{Title}">*</a></li>
       <li><a href="/">{lang:Home}</a></li>
-      <li><a href="https://plus.google.com/113038133242730776079/?prsrc=3">GOOGLE+</a></li>
-      {block:HasPages}{block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}{/block:HasPages}
-      {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
-      {block:SubmissionsEnabled}<li><a href="/submit">{SubmitLabel}</a></li>{/block:SubmissionsEnabled}
-      {block:IfFlickrUsername}<li><a href="http://flickr.com/photos/{text:Flickr Username}">Flickr</a></li>{/block:IfFlickrUsername}
-      {block:IfTwitterUsername}<li><a href="//twitter.com/{text:Twitter Username}">@{text:Twitter Username}</a></li>{/block:IfTwitterUsername}
+      <li>&nbsp;</li>
+      {block:IfGooglePlusID}
+        <li>
+          <a href="https://plus.google.com/{text:Google Plus ID}/?prsrc=3">
+            google+
+          </a>
+        </li>
+      {/block:IfGooglePlusID}
+      {block:IfFacebookUsername}
+        <li>
+          <a href="https://www.facebook.com/{text:Facebook Username}">
+            facebook
+          </a>
+        </li>
+      {/block:IfFacebookUsername}
+      {block:IfLinkedinUsername}
+        <li>
+          <a href="https://www.linkedin.com/in/{text:Linkedin Username}">
+            linkedin
+          </a>
+        </li>
+      {/block:IfLinkedinUsername}
+      {block:IfLastfmUsername}
+        <li>
+          <a href="http://www.last.fm/user/{text:Lastfm Username}">
+            lastfm
+          </a>
+        </li>
+      {/block:IfLastfmUsername}
+      {block:IfTwitterUsername}
+        <li>
+          <a href="https://twitter.com/{text:Twitter Username}">
+            twitter
+          </a>
+        </li>
+      {/block:IfTwitterUsername}
+      <li>&nbsp;</li>
+      {block:HasPages}
+        {block:Pages}<li><a href="{URL}">{Label}</a></li>{/block:Pages}
+      {/block:HasPages}
+      {block:AskEnabled}
+        <li><a href="/ask">{AskLabel}</a></li>
+      {/block:AskEnabled}
+      {block:SubmissionsEnabled}
+        <li><a href="/submit">{SubmitLabel}</a></li>
+      {/block:SubmissionsEnabled}
+      <li>&nbsp;</li>
       <li><a href="/archive">{lang:Archive}</a></li>
       <li><a href="{RSS}">{lang:RSS}</a></li>
       <li>&nbsp;</li>
@@ -63,7 +143,15 @@
         <li class="regular">
           {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
           {Body}
-          <p class="meta"><a href="{Permalink}">{TimeAgo}</a> &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a></p>
+          <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
+            <a href="{Permalink}">{TimeAgo}</a> &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          </p>
         </li>
         {/block:Text}
         
@@ -72,6 +160,12 @@
           <p class="noborder">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"/>{LinkCloseTag}</p>
           {block:Caption}{Caption}{/block:Caption}
           <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
             <a href="{Permalink}">{TimeAgo}</a>
             &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
             {block:ContentSource}
@@ -86,6 +180,12 @@
           <p class="noborder">{Photoset-500}</p>
           {block:Caption}{Caption}{/block:Caption}
           <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
             <a href="{Permalink}">{TimeAgo}</a>
             &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
             {block:ContentSource}
@@ -100,6 +200,12 @@
           <blockquote>{Quote}</blockquote>
           {block:Source}<cite>&ndash; {Source}</cite>{/block:Source}
           <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
             <a href="{Permalink}">{TimeAgo}</a>
             &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
             {block:ContentSource}
@@ -114,6 +220,12 @@
           <h3><a href="{URL}" class="link" {Target}>{Name} &rarr;</a></h3>
           {block:Description}{Description}{/block:Description}
           <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
             <a href="{Permalink}">{TimeAgo}</a>
             &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
             {block:ContentSource}
@@ -128,6 +240,12 @@
             {Video-500}
             {block:Caption}{Caption}{/block:Caption}
             <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
               <a href="{Permalink}">{TimeAgo}</a>
               &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
               {block:ContentSource}
@@ -142,6 +260,12 @@
           {block:Title}<h3><a href="{Permalink}">{Title}</a></h3>{/block:Title}
           {block:Lines}<p>{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>{/block:Lines}
           <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
             <a href="{Permalink}">{TimeAgo}</a>
             &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
             {block:ContentSource}
@@ -156,6 +280,12 @@
           {AudioPlayerBlack}
           {block:Caption}{Caption}{/block:Caption}
           <p class="meta">
+            {block:HasTags}
+              {block:Tags}
+                <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+              <br>
+            {/block:HasTags}
             <a href="{Permalink}">{TimeAgo}</a>
             &nbsp;/&nbsp; <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
             {block:ContentSource}
@@ -170,12 +300,6 @@
           {PostNotes}
         </li>
         {/block:PostNotes}
-
-        {block:HasTags}
-          {block:Tags}
-            <a href="{TagURL}">{Tag}</a>
-          {/block:Tags}
-        {/block:HasTags}
 
       {/block:Posts}
       
