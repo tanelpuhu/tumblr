@@ -75,6 +75,16 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           text-shadow: none;
         }
 
+        .fm {
+          position: fixed;
+          bottom: 15px;
+          right: 15px;
+          font-size: 12px;
+          color: #333;
+          text-align: right;
+          line-height: 18px;
+        }
+
         {CustomCSS}
     </style>
   </head>
@@ -305,6 +315,12 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
         var pageTracker = _gat._getTracker("UA-260300-11");
         pageTracker._trackPageview();
     } catch(err) {}
+    var clbk = function(data) {
+      if(data && data.text) {
+        $("html body").append("<div class='fm'> "+ data.text +" @ last.fm</div>");
+      }
+    }
     </script>
+    <script type="text/javascript" src="//app.lusikas.com/fm"></script>
   </body>
 </html>
