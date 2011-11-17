@@ -309,6 +309,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
         {block:PreviousPage}<a class="button right" href="{PreviousPage}">{lang:Newer} &rarr;</a>{/block:PreviousPage}
       </div>
     </div>
+    <div class='fm'></div>
     <script type='text/javascript' src='http://www.google-analytics.com/ga.js'></script>
     <script type="text/javascript">
     try {
@@ -316,10 +317,13 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
         pageTracker._trackPageview();
     } catch(err) {}
     var clbk = function(data) {
-      if(data && data.text) {
-        $("html body").append("<div class='fm'> "+ data.text +" @ last.fm</div>");
+      if(data) {
+        var ago = data.ago || 0;
+        if(ago && ago < 20000 && data.text) {
+          $(".fm").text(data.text +" @ last.fm");
+        }
       }
-    }
+    };
     </script>
     <script type="text/javascript" src="//app.lusikas.com/fm"></script>
   </body>
