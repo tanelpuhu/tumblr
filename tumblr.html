@@ -1,19 +1,19 @@
 <!--
-   _                   _             _                                  
-  | |                 | |           | |                                 
-  | |_ __ _ _ __   ___| |_ __  _   _| |__  _   _   ___ ___  _ __ ___    
-  | __/ _` | '_ \ / _ \ | '_ \| | | | '_ \| | | | / __/ _ \| '_ ` _ \   
-  | || (_| | | | |  __/ | |_) | |_| | | | | |_| || (_| (_) | | | | | |  
-   \__\__,_|_| |_|\___|_| .__/ \__,_|_| |_|\__,_(_)___\___/|_| |_| |_|  
-                        | |                                             
-                        |_|                                             
-                                                                        
+   _                   _             _
+  | |                 | |           | |
+  | |_ __ _ _ __   ___| |_ __  _   _| |__  _   _   ___ ___  _ __ ___
+  | __/ _` | '_ \ / _ \ | '_ \| | | | '_ \| | | | / __/ _ \| '_ ` _ \
+  | || (_| | | | |  __/ | |_) | |_| | | | | |_| || (_| (_) | | | | | |
+   \__\__,_|_| |_|\___|_| .__/ \__,_|_| |_|\__,_(_)___\___/|_| |_| |_|
+                        | |
+                        |_|
+
 aqu5S0bAQ8ZVwCGNt0kgrN83Dkyiti7FagWb7MtCOFgE9vHRjfTN9zXwCDMX5SRzCEjn8uf5
 6dEu1Lkasak6LpC4g8N18qXjnTzU8GM7GDOYfZA6VNMSNBHBpha3JHfV0q1LK2fNCAN9c7s3
 Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
-                                                                        
+
                                      https://github.com/tanelpuhu/tumblr
-                                                                        
+
 -->
 <!DOCTYPE html>
 <html>
@@ -58,7 +58,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
             -moz-opacity: 0.15;
             opacity: 0.15;
         }
-        
+
         #ck {
           display:none;
         }
@@ -80,7 +80,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           bottom: 15px;
           right: 15px;
           font-size: 12px;
-          color: #999;
+          color: #777;
           text-align: right;
           line-height: 18px;
         }
@@ -318,10 +318,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
     } catch(err) {}
     var clbk = function(data) {
       if(data) {
-        var ago = data.ago || 0;
-        if(ago && ago < 20000 && data.text) {
-          $(".fm").text(data.text +" (last.fm)");
-        }
+        $(".fm").text(data.text);
       }
     };
     </script>
