@@ -1,19 +1,19 @@
 <!--
-   _                   _             _
-  | |                 | |           | |
-  | |_ __ _ _ __   ___| |_ __  _   _| |__  _   _   ___ ___  _ __ ___
-  | __/ _` | '_ \ / _ \ | '_ \| | | | '_ \| | | | / __/ _ \| '_ ` _ \
-  | || (_| | | | |  __/ | |_) | |_| | | | | |_| || (_| (_) | | | | | |
-   \__\__,_|_| |_|\___|_| .__/ \__,_|_| |_|\__,_(_)___\___/|_| |_| |_|
-                        | |
-                        |_|
-
+   _                   _             _                                  
+  | |                 | |           | |                                 
+  | |_ __ _ _ __   ___| |_ __  _   _| |__  _   _   ___ ___  _ __ ___    
+  | __/ _` | '_ \ / _ \ | '_ \| | | | '_ \| | | | / __/ _ \| '_ ` _ \   
+  | || (_| | | | |  __/ | |_) | |_| | | | | |_| || (_| (_) | | | | | |  
+   \__\__,_|_| |_|\___|_| .__/ \__,_|_| |_|\__,_(_)___\___/|_| |_| |_|  
+                        | |                                             
+                        |_|                                             
+                                                                        
 aqu5S0bAQ8ZVwCGNt0kgrN83Dkyiti7FagWb7MtCOFgE9vHRjfTN9zXwCDMX5SRzCEjn8uf5
 6dEu1Lkasak6LpC4g8N18qXjnTzU8GM7GDOYfZA6VNMSNBHBpha3JHfV0q1LK2fNCAN9c7s3
 Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
-
+                                                                        
                                      https://github.com/tanelpuhu/tumblr
-
+                                       
 -->
 <!DOCTYPE html>
 <html>
@@ -30,10 +30,10 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
     <title>{block:TagPage}{Tag} - {/block:TagPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
     <link rel="shortcut icon" href="{Favicon}" />
     {block:IfGooglePlusID}<link rel="publisher" href="https://plus.google.com/{text:Google Plus ID}/" />{/block:IfGooglePlusID}
+    {block:IfGooglePlusID}<link rel="author" href="https://plus.google.com/{text:Google Plus ID}/" />{/block:IfGooglePlusID}
     <link rel="alternate" type="application/rss+xml" title="RSS" href="{RSS}" />
-    <link rel="stylesheet" type="text/css" href="//cdn.tanelpuhu.com/com/style.css"/>
+    <link rel="stylesheet" type="text/css" href="http://static.tumblr.com/iw6x0wk/SoBmyqg3c/style.css"/>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script type="text/javascript" src="//cdn.tanelpuhu.com/com/infinite_scroll.js"></script>
     <style type="text/css">
         @import url(http://fonts.googleapis.com/css?family=Cabin);
         body {
@@ -58,7 +58,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
             -moz-opacity: 0.15;
             opacity: 0.15;
         }
-
+        
         #ck {
           display:none;
         }
@@ -84,6 +84,10 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
           text-align: right;
           line-height: 18px;
         }
+        .small {
+            font-size: 9px;
+            text-align: right;
+        }
 
         {CustomCSS}
     </style>
@@ -94,7 +98,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
       <li>&nbsp;</li>
       {block:IfGooglePlusID}
         <li>
-          <a href="https://plus.google.com/{text:Google Plus ID}/?prsrc=3">
+          <a href="https://plus.google.com/{text:Google Plus ID}" rel="publisher">
             google+
           </a>
         </li>
@@ -141,9 +145,6 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
       <li><a href="/archive">{lang:Archive}</a></li>
       <li><a href="{RSS}">{lang:RSS}</a></li>
       <li>&nbsp;</li>
-      <li>
-        <a href="//www.google.com/talk/service/badge/Start?tk=z01q6amlqr4t2vmagmghck92kde16m076mfggb32bb76cjhe2e1j3phv85nka72sjk2n3ifhm604aslhurth5ekqafqib4k6dt0vl0pnvaic5h97ecthe281poaql66n2cpvfgt6fipvjqdo2jfqa3i6iktuuucdb1jd0mrc7" target="_blank" title="Click here to chat with Tanel">Chat</a>
-      </li>
     </ol>
 
     <div id="content">
@@ -308,6 +309,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
         {block:NextPage}<a class="button next" id="next_page" href="{NextPage}">&larr; {lang:Older}</a>{/block:NextPage}
         {block:PreviousPage}<a class="button right" href="{PreviousPage}">{lang:Newer} &rarr;</a>{/block:PreviousPage}
       </div>
+      <div class=small><a href='bitcoin:1TANEL9EX451ejTuyNY459xUGScPEw96S'>1TANEL9EX451ejTuyNY459xUGScPEw96S</a></div>
     </div>
     <div class='fm'></div>
     <script type='text/javascript' src='http://www.google-analytics.com/ga.js'></script>
@@ -318,7 +320,7 @@ Ux5pCSCtadHG0duzPYERtG4B2w15pPnW828a66SdgOMkl4JPFNJAkZNVvXOFqiJqPBy8GOha
     } catch(err) {}
     var clbk = function(data) {
       if(data) {
-        $(".fm").text(data.text);
+        $(".fm").append(data.text);
       }
     };
     </script>
